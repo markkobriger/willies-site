@@ -118,16 +118,20 @@ a:hover{ color: var(--accent); }
   justify-content:center;
   padding: 12px 16px;
   border-radius: 14px;
-  border: 1px solid rgba(102,214,255,.35);
-  background: linear-gradient(135deg, rgba(102,214,255,.20), rgba(152,255,166,.10));
+  border: 1px solid color-mix(in oklab, var(--brand-1) 55%, white 0%);
+  background: linear-gradient(135deg,
+    color-mix(in oklab, var(--brand-1) 22%, transparent),
+    color-mix(in oklab, var(--brand-2) 14%, transparent)
+  );
   color: var(--text);
   font-weight: 800;
   box-shadow: var(--shadow);
 }
 .btn:hover{
-  border-color: rgba(102,214,255,.55);
+  border-color: color-mix(in oklab, var(--brand-1) 75%, white 0%);
   transform: translateY(-1px);
 }
+
 .btn:active{ transform: translateY(0px); }
 
 .btn-ghost{
