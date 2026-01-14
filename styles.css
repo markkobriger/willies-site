@@ -1,21 +1,25 @@
 :root{
   /* Willie’s logo palette */
   --ink: #1F1F20;
-  --charcoal: #3A3A3C;
-  --steel: #B7B5B6;
 
   --red: #C12509;
   --flame: #F4A415;
   --gold: #CAA05A;
 
-  --bg: var(--ink);
-  --text: #E9EEF6;
-  --muted: #A8B3C7;
-  --line: rgba(202,160,90,.18);
-  --shadow: 0 18px 50px rgba(0,0,0,.35);
+  /* BRIGHTER SITE BASE (this is the fix) */
+  --bg: #24252A;                 /* was near-black, now charcoal */
+  --surface: rgba(255,255,255,.07);
+  --surface2: rgba(255,255,255,.05);
+
+  --text: #F3F5F8;
+  --muted: rgba(243,245,248,.72);
+  --line: rgba(202,160,90,.26);
+
+  --shadow: 0 18px 50px rgba(0,0,0,.30);
   --radius: 18px;
   --max: 1100px;
 }
+
 
 
 *{ box-sizing:border-box; }
@@ -23,11 +27,14 @@ html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+
   background:
-    radial-gradient(1100px 600px at 20% -10%, rgba(244,164,21,.16), transparent 60%),
-    radial-gradient(900px 500px at 100% 10%, rgba(193,37,9,.14), transparent 55%),
-    var(--bg);
+    radial-gradient(1200px 650px at 20% -10%, rgba(244,164,21,.18), transparent 60%),
+    radial-gradient(1000px 520px at 100% 10%, rgba(193,37,9,.14), transparent 55%),
+    linear-gradient(180deg, #2B2C32 0%, #1E1F24 55%, #191A1E 100%);
 }
+
 a:hover{ 
   color: var(--flame);
 }
@@ -40,7 +47,7 @@ a{ color: inherit; text-decoration:none; }
 }
 
 .topbar{
-  background: rgba(255,255,255,.03);
+  background:var(--surface);
   border-bottom: 1px solid var(--line);
   font-size: 13px;
   color: var(--muted);
@@ -59,7 +66,7 @@ a{ color: inherit; text-decoration:none; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11,13,16,.75);
+  background: rgba(36,37,42,.78);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -207,13 +214,15 @@ a:hover{
   height:100%;
   display:block;
   object-fit: cover;
+  background: var(--surface);
+  border: 1px solid var(--line);
 }
 
 .section{
   padding: 60px 0;
 }
 .section-alt{
-  background: linear-gradient(180deg, rgba(255,255,255,.03), transparent);
+  background: linear-gradient(180deg, var(--surface2), transparent);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -232,7 +241,7 @@ a:hover{
   gap: 14px;
 }
 .card{
-  background: rgba(255,255,255,.03);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 18px;
@@ -270,7 +279,7 @@ a:hover{
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 14px;
-  background: rgba(255,255,255,.03);
+  background: var(--surface);
 }
 .mini-title{ font-weight: 900; margin-bottom: 6px; }
 .about-callout{
@@ -296,8 +305,8 @@ a:hover{
 }
 
 .form{
+  background: var(--surface);
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.03);
   border-radius: var(--radius);
   padding: 16px;
 }
@@ -354,3 +363,9 @@ input:focus, textarea:focus{
   .gallery{ grid-template-columns: 1fr; }
   .topbar-inner{ gap: 8px; }
 }
+.topbar{ background: var(--surface); }
+.header{ background: rgba(36,37,42,.78); }  /* slightly lighter sticky header */
+
+.card,
+.form,
+.mini,
