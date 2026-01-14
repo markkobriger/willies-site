@@ -1,16 +1,21 @@
 :root{
-  --bg:#0b0d10;
+  /* THEME COLORS (replace these 4 with colors from the Facebook logo) */
+  --brand-1:#66d6ff;  /* primary accent */
+  --brand-2:#98ffa6;  /* secondary accent */
+  --brand-3:#e9eef6;  /* highlight / light */
+  --brand-ink:#0b0d10;/* deep background */
+
+  --bg: var(--brand-ink);
   --panel:#10151c;
-  --panel2:#0f1217;
   --text:#e9eef6;
   --muted:#a8b3c7;
   --line:rgba(255,255,255,.10);
-  --accent:#66d6ff;
-  --accent2:#98ffa6;
+
   --shadow: 0 18px 50px rgba(0,0,0,.35);
   --radius: 18px;
   --max: 1100px;
 }
+
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
